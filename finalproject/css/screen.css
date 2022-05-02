@@ -1,0 +1,441 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap');
+* {
+    box-sizing: border-box;
+}
+html body{
+    background-color: #000000;
+    font-family: 'Source Code Pro';
+}
+#myVideo{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    animation: blur-in 3s;
+    animation-fill-mode:forwards;
+    z-index: 1;
+}
+.contentStart{
+    font-family: 'Source Code Pro';
+    font-weight: 200;
+    text-shadow: 3px 3px #000000;
+    color: white;
+    z-index: 10;
+    position: relative;   
+    text-align: center;
+    animation: drop-down 2s forwards;
+}
+.contentEnd{
+    visibility: hidden;
+}
+.resultStart{
+    visibility: hidden;
+}
+.resultEnd{
+    font-family: 'Source Code Pro';
+    font-weight: 200;
+    text-shadow: 3px 3px #000000;
+    color: white;
+    text-align: center;
+    animation: drop-down 2s forwards, footer-text-in 2s forwards;
+    visibility: visible;
+    position: relative;
+    z-index: 10;
+}
+h1{
+    font-size: clamp(2rem, 3.5vw, 5rem);
+    animation: center-text-in 3s;
+    animation-fill-mode:forwards;
+}
+h2{
+    font-size: clamp(1.5rem, 3vw, 4.5rem);
+    text-shadow: 3px 3px #000000;
+    animation: center-text-in 3s;
+    animation-fill-mode:forwards;
+}
+h3{
+    font-family: 'Source Code Pro';
+    font-weight: 200;
+    font-size: clamp(.4rem, .6vw, 1.5rem);
+    text-shadow: 3px 3px #000000;
+    color: white;
+    z-index: 20;
+    position: fixed;   
+    text-align: left;
+    bottom: 2%;
+    left: 2%;
+    animation: footer-text-in 3s;
+    animation-fill-mode:forwards;
+}
+p{
+    font-size: clamp(.8rem, 1.5vw, 3rem);
+}
+#MYCOPY{
+    text-align: right;
+    right: 2%;
+    left: 0px;
+}
+.icon-bar{
+    background-color: #0000005c;
+    border-radius: 25px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 5vw;
+    padding: 2%;
+}
+nav{
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    right: -100%;
+    visibility: hidden;
+}
+nav ul{
+    list-style: none;
+    overflow: hidden;
+}
+nav ul li{
+    float: left;
+    color: white;
+    font-family: "Source Code Pro";
+    font-weight: 200;
+    text-shadow: 3px 3px #000000;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    padding: 8px 8px 8px 32px;
+}
+.list-container{
+    display: grid;
+    margin-left: 20%;
+    margin-right: 20%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 5vw);
+}
+.list-container .listSign img{
+    width: auto;
+    height: 95%;
+    animation: footer-text-in 3s forwards;
+}
+.list-container .listSign img:hover{
+    width: auto;
+    height: 100%;
+    cursor: pointer;
+}
+a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+}  
+a:hover {
+    color: white;
+} 
+a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: top left;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+a:hover::before {
+    transform: scaleX(1);
+}
+nav ul li a::before{
+    transform-origin: center;
+}
+#MENUBUTTON{
+    font-size: 2.5rem;
+    color: white;
+    position: absolute;
+    z-index: 10;
+    top: 2%;
+    right: 2%;
+    cursor: pointer;
+}
+.formEntry{
+    width:300px; 
+    height:75px; 
+    font-size: 2rem; 
+    background-color: rgba(0, 0, 0, 0.302);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 1%;
+}
+.inputButton{
+    font-family: "Source Code Pro";
+    background-color: rgba(255, 255, 255, 0.592);
+    color: #000000;
+    font-weight: 800;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    z-index: 7;
+    visibility: hidden;
+    width: 75px;
+    height: 35px;
+}
+.inputButton:hover{
+    background-color: rgba(193, 193, 193, 0.592);
+}
+.gridIMG{ grid-area: i; }
+.gridH1{ grid-area: h1; }
+.gridH2{ grid-area: h2; }
+.gridP{ grid-area: p; }
+.gridDisclaimer{ grid-area: d; }
+/* For mobile phones: */
+
+@keyframes drop-down {
+    from{
+        top: 0;
+    }
+    to{
+        top: 10vw;
+    }
+}
+@keyframes center-text-in{
+    from{
+        filter: blur(10px);
+        opacity: 0%;
+    }
+    to{
+        filter: blur(0px);
+        opacity: 100%;
+    }
+}
+@keyframes footer-text-in{
+    from{
+        filter: blur(10px);
+        opacity: 0%;
+    }
+    to{
+        filter: blur(0px);
+        opacity: 100%;
+    }
+}
+@keyframes blur-in{
+    from{
+        filter: blur(0px);
+    }
+    to{
+        filter: blur(10px);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .grid-container{
+        display:grid;
+        grid-template-areas:
+            'i i i'
+            'h1 h1 h1'
+            'h2 h2 h2'
+            'p p p'
+            'd d d';
+        grid-gap:0px;
+        padding:4px;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    .icon-bar{
+        background-color: #0000005c;
+        border-radius: 25px;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 15vw;
+    }
+    .grid-container p {
+        font-size: clamp(1rem, 2vw, 3rem);
+    }
+    .gridIMG img{
+        width: 100%;
+        height: auto;
+    }
+    .gridH1 h1{
+        font-size: clamp(2.5rem, 3.5vw, 4.5rem);
+    }
+    h2{
+        font-size: clamp(1.5rem, 2.5vw, 3.5rem);
+    }
+    .list-container{
+        display: grid;
+        margin-left: 20%;
+        margin-right: 20%;
+        grid-template-columns: 30vw 30vw;
+        grid-template-rows: auto;
+        justify-content: space-between;;
+    }
+    .list-container .listSign img{
+        width: 25vw;
+        height: auto;
+    }
+    .list-container .listSign img:hover{
+        width: 25vw;
+        height: auto;
+    }
+    @keyframes drop-down {
+        from{
+            top: 0;
+        }
+        to{
+            top: 30vw;
+        }
+    }
+    nav ul li{
+        float: left;
+        color: white;
+        font-family: "Source Code Pro";
+        font-weight: 200;
+        text-shadow: 3px 3px #000000;
+        font-size: clamp(1rem, 1.5vw, 2rem);
+        padding: 8px 8px 8px 32px;
+    }
+}
+/* For tablets: */
+@media only screen and (min-width:481px) {
+	.grid-container{
+		display:grid;
+		grid-template-areas:
+			'i i i'
+			'h1 h1 h1'
+			'h2 h2 h2'
+			'p p p'
+			'd d d';
+		grid-gap:0px;
+		padding:5px;
+        margin-left: 20%;
+        margin-right: 20%;
+	}
+    .icon-bar{
+        background-color: #0000005c;
+        border-radius: 25px;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 15vw;
+    }
+    .grid-container p {
+        font-size: clamp(1rem, 2vw, 3rem);
+    }
+    .gridIMG img{
+        width: 100%;
+        height: auto;
+    }
+    .gridH1 h1{
+        font-size: clamp(2.5rem, 3.5vw, 4.5rem);
+    }
+    h2{
+        font-size: clamp(1.5rem, 2.5vw, 3.5rem);
+    }
+    .list-container{
+        display: grid;
+        margin-left: 20%;
+        margin-right: 20%;
+        grid-template-columns: 30vw 30vw;
+        grid-template-rows: auto;
+        justify-content: space-between;;
+    }
+    .list-container .listSign img{
+        width: 25vw;
+        height: auto;
+    }
+    .list-container .listSign img:hover{
+        width: 25vw;
+        height: auto;
+    }
+    @keyframes drop-down {
+        from{
+            top: 0;
+        }
+        to{
+            top: 20vw;
+        }
+    }
+    nav ul li{
+        float: left;
+        color: white;
+        font-family: "Source Code Pro";
+        font-weight: 200;
+        text-shadow: 3px 3px #000000;
+        font-size: clamp(1.5rem, 2vw, 2rem);
+        padding: 8px 8px 8px 32px;
+    }
+    #DISCLAIMER{
+        font-size: 3vw;
+    }
+}
+
+/* For desktop: */
+@media only screen and (min-width: 769px) {
+	.grid-container{
+		display:grid;
+		grid-template-areas:
+			'i i h1 h1 .'
+            "i i . h2 h2"
+			'p p p p p'
+            'd d d d d';
+		grid-gap:0px;
+		padding:0px;
+        margin-left: 20%;
+        margin-right: 20%;
+	}
+    .grid-container p {
+        font-size: clamp(.8rem, 1.5vw, 3rem);
+    }
+    h2{
+        font-size: clamp(1.5rem, 2.5vw, 3.5rem);
+    }
+    .gridIMG img{
+        width: 100%;
+        height: auto;
+    }
+    .gridH1 h1{
+        font-size: clamp(2rem, 3vw, 4rem);
+    }
+    h2{
+        font-size: clamp(1rem, 2vw, 3rem);
+    }
+    .list-container{
+        display: grid;
+        margin-left: 20%;
+        margin-right: 20%;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 5vw);
+    }
+    .list-container .listSign img{
+        width: auto;
+        height: 95%;
+        animation: footer-text-in 3s forwards;
+    }
+    .list-container .listSign img:hover{
+        width: auto;
+        height: 100%;
+        cursor: pointer;
+    }
+    .icon-bar{
+        background-color: #0000005c;
+        border-radius: 25px;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 5vw;
+        padding: 2%;
+    }
+    #DISCLAIMER{
+        font-size: 1.5vw;
+    }
+    @keyframes drop-down {
+        from{
+            top: 0;
+        }
+        to{
+            top: 10vw;
+        }
+    }
+}

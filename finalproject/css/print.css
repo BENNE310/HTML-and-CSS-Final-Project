@@ -1,0 +1,43 @@
+*{
+    width:100%;
+	font-size:12pt;
+	font-family:sans-serif;
+	background:white;
+	color:black;
+	text-align:left;
+	margin:0px;
+	padding:0px;
+	display:block;
+	top:0%;
+	height:auto;
+	border:none;
+	text-shadow:none;
+	font-weight:normal;
+    filter: none;
+    animation: none;
+}
+header,h1,h2,h3,p,a{
+	font-family:sans-serif;
+	color:black;
+	font-size:12pt;
+    display: block;
+	text-align:left;
+	text-shadow:none;
+	text-decoration: none;
+	background:none;
+    filter: none;
+    animation: none;
+    opacity: 100%;
+    left: auto;
+	margin:0px;
+	padding:0px;
+}
+#MYCOPY{
+	display: block;
+	position: absolute;
+	margin:0px;
+	padding:0px;
+}
+.icon-bar,input,footer>h3>a,video,img,nav,span{
+	display:none;
+}
